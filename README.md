@@ -1,5 +1,7 @@
 documentation tuto gitHub open classroom et cours youtunbe nicodev GIT et GITHUB
+
 ##préalable installation de clé ssh sur le poste
+
 ssh -keygen -t rsa -b 4096 -C 'adresse.mail"
 si pas de nom de fichier installé par défaut dans le répertoire configuré à l'installation de git
 users/utilisateur/.ssh
@@ -19,7 +21,7 @@ git nomdurepository github nomdudossier
     git add .
     git add nomdefichier
     ajouter les fichiers du projet
-3 ## commit initialisation -m permet de donner un titre
+##3 commit initialisation -m permet de donner un titre
 
     git commit -m "initial commit"
     la création en local (sans clonage d'un repository github) créé une branche master (au lieu de main)
