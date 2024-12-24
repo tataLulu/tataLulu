@@ -49,5 +49,43 @@ git checkout- b nomdelabranche
     faire un merge
     git merge nondelabranche à jointer
     puis on fait un git push origin main
-## introduction de la notion de review de code (revue).
+## supprimer une branche
 
+    git branch -D nomdelabranche ou
+    git branch -d nomdelabranche
+## organiser une remise
+    dans le cas ou on a travaillé sur la mauvaise branche et pas encore fait de commit
+    git stash //met les operations en attente
+    se mettre dans la bonne branche
+    git branch brancheok
+    git stash apply (s'applique au dernier stash )
+    git stash list
+## cas ou l'on a fait un commit sur la mauvaise branche
+    git log donne l'identifiant du dernier commit
+    git reset --hard HEAD^ 
+    ou git reset --hard identifiant du commit
+## cas ou l'on a donné un mauvais titre au commit
+     git commit --amend -m "je me suis trompé dans le message du commit"
+## cas ou l'on a oublier un fichier
+    git add fichieroublié
+    git commit --amend --no-edit
+## cas ou le commit a été poussé sur github
+    git revert à utiliser sur branche public
+    git reset pour une branche privé (non pushée)
+    !! possibilité d'écrasement des fichiers avec git revert
+
+    reset--hard affecte le working directory
+    git reset commitcible --hard revient à l'état avant le commit cible
+    git reset --mixed ne supprime pas les modifications en cours
+    git reset --soft permet de se placer sur un commit
+    git revert HEAD annule le commit
+## historique des commits
+    git reflog 
+    ensuite pour revenir en arriere 
+    git checkout identifiant
+    puis creation d'une nouvelle branche
+    git checkout -b nouvellebranche
+## explorer les changements dans un fichier
+    git blame nomdefichier
+## importer des commits spécifiques
+    cherry-pick identifiant pour appliquer un commit sur la branche actuelle
